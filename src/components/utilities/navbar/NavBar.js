@@ -1,5 +1,5 @@
 import React from 'react';
-import {Navbar, Nav, Container} from 'react-bootstrap';
+import {Navbar, Nav} from 'react-bootstrap';
 import { motion, AnimatePresence } from "framer-motion";
 import close from '../../../images/icons/close.svg';
 import { Link } from 'react-router-dom';
@@ -54,18 +54,18 @@ class NavBar extends React.Component{
       <>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" id={this.checkIfMobile() ? 'mobile-nav' : 'web-nav'}>
         {
-          this.checkIfMobile() ? (
-            <Container>
-              <Navbar.Brand href="/" className={this.props.brandLight ? 'brand-light' : 'brand-dark'}>Mitali</Navbar.Brand>
-              <Nav className="ml-auto">
-                <motion.div className={this.props.toggleLight ? "toggle-container-light" : "toggle-container-dark"} whileHover={btnHover} whileTap={btnTap} onClick={()=>{
-                  this.setState({showMenu:true})
-                }}>
-                  <i class="fa fa-bars" aria-hidden="true"></i>
-                </motion.div>
-              </Nav>
-            </Container>
-          ) : (
+          // this.checkIfMobile() ? (
+          //   <Container>
+          //     <Navbar.Brand href="/" className={this.props.brandLight ? 'brand-light' : 'brand-dark'}>Mitali</Navbar.Brand>
+          //     <Nav className="ml-auto">
+          //       <motion.div className={this.props.toggleLight ? "toggle-container-light" : "toggle-container-dark"} whileHover={btnHover} whileTap={btnTap} onClick={()=>{
+          //         this.setState({showMenu:true})
+          //       }}>
+          //         <i class="fa fa-bars" aria-hidden="true"></i>
+          //       </motion.div>
+          //     </Nav>
+          //   </Container>
+          // ) : (
             <>
               <Navbar.Brand href="/" className={this.props.brandLight ? 'brand-light' : 'brand-dark'}>Mitali</Navbar.Brand>
               <Nav className="ml-auto">
@@ -76,7 +76,7 @@ class NavBar extends React.Component{
                 </motion.div>
               </Nav>
             </>
-          )
+          // )
         }
       </Navbar>
       { this.state.showMenu && 

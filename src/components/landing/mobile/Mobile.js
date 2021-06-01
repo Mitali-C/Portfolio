@@ -1,8 +1,9 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import { motion } from "framer-motion";
-import './mobile.scss';
+import profile from '../../../images/me/3.jpeg';
 import NavBar from '../../utilities/navbar/NavBar';
+import './mobile.scss';
 
 const words = [" ideas to design.", " designs to life."];
 let i = 0;
@@ -10,12 +11,14 @@ let i = 0;
 const typingEffect = () => {
   let word = words[i].split("");
   var loopTyping = function() {
-    if (word.length > 0) {
-      document.getElementById('typing-text').innerHTML += word.shift();
-    } else {
-      setTimeout(deletingEffect, 2000)
-      return false;
-    };
+    if(document.getElementById('typing-text')){
+      if (word.length > 0) {
+        document.getElementById('typing-text').innerHTML += word.shift();
+      } else {
+        setTimeout(deletingEffect, 2000)
+        return false;
+      };
+    }
     setTimeout(loopTyping, 200);
   };
   loopTyping();
@@ -24,18 +27,20 @@ const typingEffect = () => {
 const deletingEffect = () => {
   let word = words[i].split("");
   var loopDeleting = function() {
-    if (word.length > 0) {
-      word.pop();
-      document.getElementById('typing-text').innerHTML = word.join("");
-    } else {
-      if (words.length > (i + 1)) {
-        i++;
+    if(document.getElementById('typing-text')){
+      if (word.length > 0) {
+        word.pop();
+        document.getElementById('typing-text').innerHTML = word.join("");
       } else {
-        i = 0;
+        if (words.length > (i + 1)) {
+          i++;
+        } else {
+          i = 0;
+        };
+        typingEffect();
+        return false;
       };
-      typingEffect();
-      return false;
-    };
+    }
     setTimeout(loopDeleting, 100);
   };
   loopDeleting();
@@ -61,7 +66,8 @@ class Mobile extends React.Component{
         <div className="image-container">
           <div className="top-semi-circle"></div>
           <div className="bottom-semi-circle"></div>
-          <div className="profile-pic"></div>
+          {/* <div className="profile-pic"></div> */}
+          <img src={profile} className="profile-pic" alt="profile-pic"></img>
         </div>
       </div>
     )
@@ -94,11 +100,13 @@ class Mobile extends React.Component{
 
   render(){
     return(
+      <>
+      <NavBar brandLight={true} toggleLight={true}></NavBar>
       <div id="mobile-landing">
-        <NavBar brandLight={true} toggleLight={true}></NavBar>
         {this.renderTopPanel()}
         {this.renderBottomPanel()}
       </div>
+      </>
     )
   }
 }

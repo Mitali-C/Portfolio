@@ -4,6 +4,9 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  position: absolute;
+  width: 100%;
+  top: 0;
 
   .top-panel{
     height: 13rem;
