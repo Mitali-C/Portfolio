@@ -2,7 +2,6 @@ import React from 'react';
 import {Navbar, Nav} from 'react-bootstrap';
 import { motion, AnimatePresence } from "framer-motion";
 import close from '../../../images/icons/close.svg';
-import { Link } from 'react-router-dom';
 import './navbar.scss';
 
 const btnTap = {scale: 0.9};
@@ -39,10 +38,10 @@ class NavBar extends React.Component{
         </div>
         <div className="items-container">
           <div className="menu">
-            <Link to="/">Home</Link>
-            <Link to="/portfolio">Portfolio</Link>
-            <Link to="/about-me">About me</Link>
-            <Link to="/contact">Contact</Link>
+            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="/portfolio">Portfolio</Nav.Link>
+            <Nav.Link href="/about-me">About me</Nav.Link>
+            <Nav.Link href="/contact">Contact</Nav.Link>
           </div>
         </div>
       </motion.div>
