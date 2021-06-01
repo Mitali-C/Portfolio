@@ -1,0 +1,125 @@
+@import './../../../constants/constants';
+
+#mobile-landing{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  .top-panel{
+    height: 13rem;
+    background-color: $primary-dark-grey;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    .image-container{
+      width: 13rem;
+      height: 13rem;
+      border-radius: 50%;
+      margin-bottom: -6.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .top-semi-circle{
+        width: 13rem;
+        height: 6.5rem;
+        background-color: $primary-light-grey;
+        border-radius: 6.5rem 6.5rem 0 0;
+      }
+
+      .bottom-semi-circle{
+        width: 13rem;
+        height: 6.5rem;
+        background-color: $primary-dark-grey;
+        border-radius: 0 0 6.5rem 6.5rem;
+        z-index: 0;
+      }
+
+      .profile-pic{
+        position: absolute;
+        width: 12rem;
+        height: 12rem;
+        border-radius: 50%;
+        background-color: #fff;
+      }
+    }
+  }
+
+  .bottom-panel{
+    padding-top: 7.5rem;
+    background-color: $primary-light-grey;
+    flex: 1;
+
+    h1{
+      text-align: center;
+    }
+
+    h3{
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+
+      #typing-text{
+        color:$primary-orange;
+        padding-left: 0.5rem;
+      }
+
+      .header-sub-title {
+        color: $primary-orange;
+        padding: 0.1em;
+      }
+
+      .blink {
+        animation: blink 1s infinite;
+      }
+      @keyframes blink{
+        to { opacity: .0; }
+      }
+    }
+
+    .buttons-container{
+      margin-top: 4rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      button{
+        background-color: $primary-light-grey;
+        border: 2px solid $primary-dark-grey;
+        padding: 1rem 1rem;
+        width: 14rem;
+        margin-bottom: 1rem;
+        margin-right: 1rem;
+        color: $primary-dark-grey;
+        font-weight: 700;
+
+        &:focus, &:active, &:hover{
+          outline: none;
+          color: $primary-light-grey;
+          background-color: $primary-dark-grey;
+        }
+      }
+    }
+
+    .social-media-container{
+      display: flex;
+      justify-content: center;
+      // flex-direction: column;
+      color: $primary-dark-grey;
+      margin-top: 2rem;
+
+      i{
+        font-size: 1.5rem;
+        margin: 0.8rem;
+        cursor: pointer;
+
+        &:hover, &:active, &:focus{
+          color: $primary-orange;
+          font-size: 1.6rem;
+        }
+      }
+    }
+  }
+}
