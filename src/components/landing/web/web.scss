@@ -2,7 +2,10 @@
 
 #web-landing{
   min-height: 100vh;
-  display: flex;
+  display: flex;    
+  position: absolute;
+  width: 100%;
+  top: 0;
 
   .left-panel{
     min-height: 100vh;
