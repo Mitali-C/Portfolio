@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from "framer-motion";
 import './web.scss';
+import profile from '../../../images/me/3.jpeg';
 import NavBar from '../../utilities/navbar/NavBar';
 
 const words = [" ideas to design.", " designs to life."];
@@ -81,7 +82,8 @@ class Web extends React.Component{
         <div className="image-container">
           <div className="left-semi-circle"></div>
           <div className="right-semi-circle"></div>
-          <div className="profile-pic"></div>
+          <img src={profile} className="profile-pic" alt="profile-pic"></img>
+          {/* <div className="profile-pic"></div>  */}
         </div>
         <div className="social-media-container">
           <i class="fa fa-linkedin" aria-hidden="true"></i>

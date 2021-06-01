@@ -1,6 +1,6 @@
 import React from 'react';
 import {Navbar, Nav, Container} from 'react-bootstrap';
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import close from '../../../images/icons/close.svg';
 import { Link } from 'react-router-dom';
 import './navbar.scss';
@@ -28,7 +28,12 @@ class NavBar extends React.Component{
 
   renderNavDrawer = () => {
     return(
-      <Container className="nav-drawer">
+      <motion.div className="nav-drawer container" 
+        initial={{ x: 300, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ type: 'tween', duration: 0.5 }}
+        exit={{ x: -300, opacity: 0 }}
+      >
         <div className="close-container">
           <motion.img src={close} alt="close-icon" whileHover={btnHover} whileTap={btnTap} onClick={()=>{this.setState({showMenu:false})}}></motion.img>
         </div>
@@ -40,7 +45,7 @@ class NavBar extends React.Component{
             <Link to="/contact">Contact</Link>
           </div>
         </div>
-      </Container>
+      </motion.div>
     )
   }
 
@@ -74,7 +79,11 @@ class NavBar extends React.Component{
           )
         }
       </Navbar>
-      { this.state.showMenu && <>{this.renderNavDrawer()}</>}
+      { this.state.showMenu && 
+        <AnimatePresence>
+          {this.renderNavDrawer()}
+        </AnimatePresence>
+      }
       </>
     )
   }
