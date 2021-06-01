@@ -2,6 +2,7 @@ import React from 'react';
 import { Container } from 'react-bootstrap';
 import { motion } from "framer-motion";
 import './mobile.scss';
+import NavBar from '../../utilities/navbar/NavBar';
 
 const words = [" ideas to design.", " designs to life."];
 let i = 0;
@@ -94,6 +95,7 @@ class Mobile extends React.Component{
   render(){
     return(
       <div id="mobile-landing">
+        <NavBar brandLight={true} toggleLight={true}></NavBar>
         {this.renderTopPanel()}
         {this.renderBottomPanel()}
       </div>

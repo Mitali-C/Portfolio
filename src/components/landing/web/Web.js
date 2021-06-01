@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from "framer-motion";
 import './web.scss';
+import NavBar from '../../utilities/navbar/NavBar';
 
 const words = [" ideas to design.", " designs to life."];
 let i = 0;
@@ -48,7 +49,6 @@ const btnHover= {
 class Web extends React.Component{
 
   componentDidMount(){
-    console.log(window.innerWidth)
     document.getElementById('typing-text').innerHTML += "";
     typingEffect();
   }
@@ -97,6 +97,7 @@ class Web extends React.Component{
   render(){
     return(
       <div id="web-landing">
+        <NavBar brandLight={false} toggleLight={true}></NavBar>
         {/* Left panel */}
         {this.renderLeftPanel()}
         {/* Right panel */}
