@@ -1,0 +1,122 @@
+@import './../../constants/constants';
+
+#contact{
+  .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    h1{
+      text-align: center;
+      color: $primary-orange;
+      margin-bottom: 0;
+    }
+  
+    .header-underline{
+      width: 10rem;
+      height: 1px;
+      background-color: $primary-dark-grey;
+    }
+
+    .content{
+      // height: 600px;
+      // background-color:#a3a3a3;
+      display: flex;
+      justify-content: center;
+
+      @media (min-width: 300px){
+        width: 100%;
+        max-width: 500px;
+        margin-top: 2rem;
+      }
+
+      @media (min-width: 600px){
+        width: 500px;
+        margin-top: 4rem;
+      }
+
+      .social-media-container{
+        display: flex;
+        flex-direction: column;
+        color: $primary-dark-grey;
+        // margin-top: 2rem;
+        margin-left: 0.6rem;
+  
+        i{
+          font-size: 1.2rem;
+          margin-bottom: 0.8rem;
+          cursor: pointer;
+  
+          &:hover, &:active, &:focus{
+            color: $primary-orange;
+            font-size: 1.3rem;
+          }
+        }
+      }
+
+      .email{
+        display: flex;    
+        justify-content: flex-end;
+        // align-items: center;
+        width: 40px;
+        flex-direction: column;
+        padding-bottom: 1rem;
+        align-items: revert;
+        cursor: pointer;
+  
+        &:hover, &:active, &:focus{
+          color: $primary-orange;
+          font-size: 1.1rem;
+        }
+
+        i{
+          -ms-transform: rotate(-90deg); /* IE 9 */
+          transform: rotate(-90deg);
+        }
+        p{
+          margin-bottom: 0.5rem;
+          -ms-transform: rotate(-90deg); /* IE 9 */
+          transform: rotate(-90deg); 
+          height: fit-content;
+          font-size: 12px;
+        }
+      }
+
+      form{
+        background-color: $primary-dark-grey;
+        padding: 2rem;
+        flex: 1;
+        color: $primary-light-grey;
+
+        label{
+          font-size: 12px;
+        }
+
+        input, textarea{
+          background-color: rgba(238, 238, 238, 0.3);
+          border-radius: 0;
+          border: none;
+          color: $primary-light-grey;
+          font-size: 12px;
+        }
+
+        button{
+          background-color: $primary-dark-grey;
+          border: 2px solid $primary-light-grey;
+          padding: 0.5rem 1rem;
+          width: 100%;
+          margin-bottom: 1rem;
+          margin-top: 1rem;
+          color: $primary-light-grey;
+          font-weight: 700;
+  
+          &:focus, &:active, &:hover{
+            outline: none;
+            color: $primary-dark-grey;
+            background-color: $primary-light-grey;
+          }
+        }
+      }
+    }
+  }
+}
